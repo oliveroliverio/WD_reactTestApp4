@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import ExpenseItem from './components/ExpenseItem';
 import './App.css';
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
   <div>
     <h2>Title</h2>
     <p>Description text</p>
+    <ExpenseItem></ExpenseItem>
   </div>
   )
 }
