@@ -8,6 +8,9 @@ function App() {
     <h2>Title</h2>
     <p>Description text</p>
     <ExpenseItem></ExpenseItem>
+    <ExpenseItem></ExpenseItem>
+    <ExpenseItem></ExpenseItem>
+    <ExpenseItem></ExpenseItem>
   </div>
   )
 }
