@@ -1,5 +1,6 @@
 import './Expenses.css'
 import ExpenseItem from './ExpenseItem'
+import Card from './Card'
 function Expenses() {
     const expenses = [
       {
@@ -24,13 +25,13 @@ function Expenses() {
         title: 'New Desk (Wooden)',
         amount: 450,
         date: new Date(2021, 3, 15),
-      },
+      }
     ];
   
    
      
     return (
-    <div className="expenses">
+    <Card className="expenses">
       <h2>Expenses</h2>
       <ExpenseItem
         title={expenses[0].title}
@@ -52,7 +53,7 @@ function Expenses() {
         amount={expenses[3].amount}
         date={expenses[3].date}
       ></ExpenseItem>
-    </div>
+    </Card>
     )
   }
   
