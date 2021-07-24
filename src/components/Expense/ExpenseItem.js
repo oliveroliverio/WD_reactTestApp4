@@ -4,7 +4,7 @@ import ExpenseDate from '../Expense/ExpenseDate'
 function ExpenseItem(props) {
     let title = props.title
     function clickHandler() {
-        console.log("clicked (but using click handler!!!")
+        title = "updated!!!"
     }
     return (
         <Card className="expense-item">
