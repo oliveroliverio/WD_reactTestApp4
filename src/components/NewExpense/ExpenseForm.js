@@ -1,7 +1,7 @@
 import './ExpenseForm.css'
 const ExpenseForm = () => {
     const titleChangeHandler = (event) => {
-        console.log(event)
+        console.log(event.target.value)
     }
     return <form>
         <div className="new-expense__controls">
