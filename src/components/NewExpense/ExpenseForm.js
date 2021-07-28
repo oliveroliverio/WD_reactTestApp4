@@ -9,17 +9,25 @@ const ExpenseForm = () => {
     
     const titleChangeHandler = (event) => {
         setEnteredTitle(event.target.value)
-    }
-    const amountChangeHandler = event => {
+    };
+    const amountChangeHandler = (event) => {
         setEnteredAmount(event.taret.value)
     };
-
-    const dateChangeHandler = event => {
+    const dateChangeHandler = (event) => {
         setEnteredDate(event.target.value)
     }; 
+    const submitHandler = (event) => {
+        event.preventDefault() // this prevents automatic page refresh so you can continue handling with JS
 
+        const expenseData = {
+            title: enteredTitle,
+            amount: enteredAmount, 
+            date: new Date(enteredDate)
+        }
+        console.log(expenseData) // testing
+    }
 
-    return <form>
+    return <form onSubmit={submitHandler}>
         <div className="new-expense__controls">
             <div className="new-expense__control"> 
                 <label>Title</label>
