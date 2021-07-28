@@ -3,41 +3,19 @@ import './ExpenseForm.css'
 
 const ExpenseForm = () => {
     
-    // const[enteredTitle, setEnteredTitle] = useState('')
-    // const[enteredAmount, setEnteredAmount] = useState('')
-    // const[enteredDate, setEnteredDate] = useState('')
-    const [userInput, setUserInput] = useState({
-        enteredTitle: '',
-        enteredAmount: '',
-        enteredDate: ''
-    })
-    // now it's in one state object.  however now, you need to update all 3 properties and not just one
-    // which is what you would normally do. 
+    const[enteredTitle, setEnteredTitle] = useState('')
+    const[enteredAmount, setEnteredAmount] = useState('')
+    const[enteredDate, setEnteredDate] = useState('')
     
     const titleChangeHandler = (event) => {
-        // setUserInput({
-        //     ...userInput,  
-        //     enteredTitle: event.target.value
-        // }) 
-        // Now he's recommending this.  You need return the previous state to the new state
-        setUserInput((prevState) => {
-            return {...prevState, enteredTitle: event.target.value}
-        })
-        // this is the safest way, making sure you're operating on the latest state (react schedules states)
-        // Memorize this: if your state relies on the previous state, use this.
+        setEnteredTitle(event.target.value)
     }
     const amountChangeHandler = event => {
-        setUserInput({
-            ...userInput,
-            enteredAmount: event.target.value
-        })
+        setEnteredAmount(event.taret.value)
     };
 
     const dateChangeHandler = event => {
-        setUserInput({
-            ...userInput, 
-            enteredDate: event.target.value
-        })
+        setEnteredDate(event.target.value)
     }; 
 
 
