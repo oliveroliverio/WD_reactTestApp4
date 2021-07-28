@@ -24,6 +24,7 @@ const ExpenseForm = () => {
             return {...prevState, enteredTitle: event.target.value}
         })
         // this is the safest way, making sure you're operating on the latest state (react schedules states)
+        // Memorize this: if your state relies on the previous state, use this.
     }
     const amountChangeHandler = event => {
         setUserInput({
