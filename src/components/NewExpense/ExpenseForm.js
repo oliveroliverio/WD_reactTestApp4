@@ -15,10 +15,15 @@ const ExpenseForm = () => {
     // which is what you would normally do. 
     
     const titleChangeHandler = (event) => {
-        setUserInput({
-            ...userInput,  // here we use spread operator so that we don't throw away the other values. Make sure to do this for the other values
-            enteredTitle: event.target.value
-        }) 
+        // setUserInput({
+        //     ...userInput,  
+        //     enteredTitle: event.target.value
+        // }) 
+        // Now he's recommending this.  You need return the previous state to the new state
+        setUserInput((prevState) => {
+            return {...prevState, enteredTitle: event.target.value}
+        })
+        // this is the safest way, making sure you're operating on the latest state (react schedules states)
     }
     const amountChangeHandler = event => {
         setUserInput({
