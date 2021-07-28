@@ -3,19 +3,35 @@ import './ExpenseForm.css'
 
 const ExpenseForm = () => {
     
-    const[enteredTitle, setEnteredTitle] = useState('')
-    const[enteredAmount, setEnteredAmount] = useState('')
-    const[enteredDate, setEnteredDate] = useState('')
+    // const[enteredTitle, setEnteredTitle] = useState('')
+    // const[enteredAmount, setEnteredAmount] = useState('')
+    // const[enteredDate, setEnteredDate] = useState('')
+    const [userInput, setUserInput] = useState({
+        enteredTitle: '',
+        enteredAmount: '',
+        enteredDate: ''
+    })
+    // now it's in one state object.  however now, you need to update all 3 properties and not just one
+    // which is what you would normally do. 
     
     const titleChangeHandler = (event) => {
-        setEnteredTitle(event.target.value)
+        setUserInput({
+            ...userInput,  // here we use spread operator so that we don't throw away the other values. Make sure to do this for the other values
+            enteredTitle: event.target.value
+        }) 
     }
     const amountChangeHandler = event => {
-        setEnteredAmount(event.target.value)
+        setUserInput({
+            ...userInput,
+            enteredAmount: event.target.value
+        })
     };
 
     const dateChangeHandler = event => {
-        setEnteredDate(event.target.value)
+        setUserInput({
+            ...userInput, 
+            enteredDate: event.target.value
+        })
     }; 
 
 
